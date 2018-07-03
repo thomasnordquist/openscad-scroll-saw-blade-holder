@@ -33,9 +33,9 @@ module shape() {
 module handleWithBevel() {
   $fn=12;
   bevelFactor = 1.15;
-  linear_extrude(height=dialWidth/4, scale=bevelFactor) scale([1/bevelFactor, 1/bevelFactor]) shape();
-  translate([0, 0, 1/4*dialWidth]) linear_extrude(height=dialWidth/2) shape();
-  translate([0, 0, 3/4*dialWidth]) linear_extrude(height=dialWidth/4, scale=1/bevelFactor) shape();
+  linear_extrude(height=dialWidth/4, scale=bevelFactor, convexity=20) scale([1/bevelFactor, 1/bevelFactor]) shape();
+  translate([0, 0, 1/4*dialWidth]) linear_extrude(height=dialWidth/2, convexity=20) shape();
+  translate([0, 0, 3/4*dialWidth]) linear_extrude(height=dialWidth/4, convexity=20, scale=1/bevelFactor) shape();
 }
 
 module handleWithCutout() {
