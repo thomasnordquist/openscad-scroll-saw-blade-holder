@@ -9,6 +9,6 @@ Part list to build one:
 - 2 x M4 hex nut
 - 6 x M4 washer (approximatly 10mm outer diameter)
 
-|blade-mount.scad|nut-handle.scad|preview.scad|
+|assembled.scad|blade-mount.scad|nut-handle.scad|
 |---|---|---|
-|![blade-mount.scad](images/blade-mount.scad.png)|![nut-handle.scad](images/nut-handle.scad.png)|![preview.scad](images/preview.scad.png)|
+|![assembled.scad](images/assembled.scad.png)|![blade-mount.scad](images/blade-mount.scad.png)|![nut-handle.scad](images/nut-handle.scad.png)|
