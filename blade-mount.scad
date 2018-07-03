@@ -36,20 +36,20 @@ bladeOffset = 8.6;
 tensionGap = 3.5;
 tensionerScrew = 4.15;
 
-module bladeMount() {
+module bladeBlock() {
   tensionScrewOffset = (mountLength - (mountMinThickness + flexCutoutDiameter)) / 2 + (mountMinThickness + flexCutoutDiameter)-1;
 
   difference() {
     cube([mountLength, mountWidth, mountHeight]);
-    
+
     translate([-2, 0]) {
        // Flex cutout (round)
       translate([mountWidth/2, mountWidth/2, -0.1]) cylinder(r=flexCutoutDiameter/2, h=mountHeight+0.2);
-    
+
       // Tension gap
       translate([flexCutoutDiameter, mountWidth/2-0.5*tensionGap, -0.1]) cube([mountLength, tensionGap, mountHeight+0.2]);
     }
- 
+
     // Tension screw
     translate([tensionScrewOffset, -0.1, 0.5*mountHeight]) rotate([270, 0, 0]) union() {
       cylinder(r=tensionerScrew/2, h=mountWidth+0.2);
@@ -59,5 +59,9 @@ module bladeMount() {
   }
 }
 
-anchorPlate();
-translate([anchorLength, -(mountWidth-anchorWidth)/2, anchorThickness-mountHeight]) bladeMount();
+module bladeMount() {
+  anchorPlate();
+  translate([anchorLength, -(mountWidth-anchorWidth)/2, anchorThickness-mountHeight]) bladeBlock();
+}
+
+bladeMount();
